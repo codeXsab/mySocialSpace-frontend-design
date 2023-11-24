@@ -1,0 +1,80 @@
+@import "../../styles/index.scss";
+@import "../../styles/variables.scss";
+
+.navBar{
+    @include themify($themes)
+    {
+        display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid themed("border");
+            height: 3rem;
+            position: sticky;
+            z-index: 999;
+            background-color: themed("bgColor");
+            color: themed("textColor");
+            top: 0;
+        
+            .left {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+        
+                span {
+                    color: themed("logo");
+                    font-weight: bold;
+                    font-size: 1.25rem;
+                }
+        
+                .search {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    border: 1px solid themed("bgColor");
+                    border-radius: 5px;
+                    padding: 5px;
+        
+                    input {
+                        border: none;
+                        width: 20vw;
+                        background: transparent;
+                        color: themed("textColor");
+                        &:focus {
+                                outline: none;
+                            }
+                    }
+                    
+                }
+            }
+        
+            .right {
+        
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+        
+                .user {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+        
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        aspect-ratio: 1/1;
+                        object-position: center;
+        
+                    }
+        
+                    span {
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                    }
+        
+                }
+            }
+    }
+}
